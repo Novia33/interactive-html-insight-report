@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Interactive Insight Report</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --panel: #ffffff;
+      --text: #17202a;
+      --muted: #607080;
+      --line: #dfe5eb;
+      --accent: #0f766e;
+      --accent-soft: #dff4f0;
+      --risk: #b45309;
+      --risk-soft: #fff4df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      overflow-x: auto;
+    }
+    .brand {
+      font-weight: 700;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font: inherit;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+    .hero {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+    h1 { font-size: clamp(28px, 4vw, 44px); }
+    h2 { font-size: 24px; margin-bottom: 14px; }
+    h3 { font-size: 16px; margin-bottom: 8px; }
+    .muted { color: var(--muted); }
+    .section { display: none; }
+    .section.active { display: block; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 118px;
+    }
+    .metric {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .two {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 58px;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    .bar {
+      height: 12px;
+      background: #e8edf2;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      border-radius: 999px;
+      padding: 3px 10px;
+      background: var(--accent-soft);
+      color: #0f4f49;
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .risk {
+      background: var(--risk-soft);
+      color: var(--risk);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    th { color: var(--muted); font-weight: 650; }
+    ul { padding-left: 18px; margin: 8px 0 0; }
+    li { margin: 7px 0; }
+    @media (max-width: 820px) {
+      .grid, .two { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 86px 1fr 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Report sections">
+      <div class="brand">Campaign Insight</div>
+      <button class="active" data-tab="summary">Summary</button>
+      <button data-tab="channels">Channels</button>
+      <button data-tab="opportunities">Opportunities</button>
+      <button data-tab="risks">Risks</button>
+      <button data-tab="actions">Actions</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="pill">Sample output</p>
+      <h1>Acquisition campaign review</h1>
+      <p class="muted">A fictional example showing how a messy review can become a focused, interactive HTML report.</p>
+    </div>
+
+    <section class="section active" id="summary">
+      <h2>Executive Summary</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Highest intent</h3>
+          <div class="metric">Search</div>
+          <p class="muted">Strong conversion, but cost pressure needs attention.</p>
+        </article>
+        <article class="card">
+          <h3>Best repeat signal</h3>
+          <div class="metric">Email</div>
+          <p class="muted">Lower volume, higher quality and confidence.</p>
+        </article>
+        <article class="card">
+          <h3>Trust builder</h3>
+          <div class="metric">Creators</div>
+          <p class="muted">Promising qualitative signal, but still early.</p>
+        </article>
+        <article class="card">
+          <h3>Decision</h3>
+          <div class="metric">Balance</div>
+          <p class="muted">Protect search while testing proof-led content.</p>
+        </article>
+      </div>
+      <div class="two">
+        <article class="card">
+          <h3>First-principles read</h3>
+          <p>The bottleneck is not only traffic. The core decision friction is buyer confidence: people want proof, comparison, and guidance before they commit.</p>
+        </article>
+        <article class="card">
+          <h3>What to avoid</h3>
+          <p>Do not shift budget only toward the cheapest traffic. Lower-cost sessions may still underperform if they do not reduce trust friction.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="channels">
+      <h2>Channel View</h2>
+      <div class="two">
+        <article class="card">
+          <h3>Sessions</h3>
+          <div class="bar-row"><span>Search</span><div class="bar"><span style="width:57%"></span></div><strong>12.4k</strong></div>
+          <div class="bar-row"><span>Social</span><div class="bar"><span style="width:100%"></span></div><strong>21.6k</strong></div>
+          <div class="bar-row"><span>Email</span><div class="bar"><span style="width:24%"></span></div><strong>5.2k</strong></div>
+          <div class="bar-row"><span>Creators</span><div class="bar"><span style="width:36%"></span></div><strong>7.8k</strong></div>
+        </article>
+        <article class="card">
+          <h3>Conversion rate</h3>
+          <div class="bar-row"><span>Search</span><div class="bar"><span style="width:75%"></span></div><strong>3.8%</strong></div>
+          <div class="bar-row"><span>Social</span><div class="bar"><span style="width:24%"></span></div><strong>1.2%</strong></div>
+          <div class="bar-row"><span>Email</span><div class="bar"><span style="width:100%"></span></div><strong>5.1%</strong></div>
+          <div class="bar-row"><span>Creators</span><div class="bar"><span style="width:47%"></span></div><strong>2.4%</strong></div>
+        </article>
+      </div>
+      <article class="card" style="margin-top:14px">
+        <h3>Evidence table</h3>
+        <table>
+          <thead><tr><th>Channel</th><th>Interpretation</th><th>Confidence</th></tr></thead>
+          <tbody>
+            <tr><td>Search</td><td>High intent, expensive conversions</td><td>Medium</td></tr>
+            <tr><td>Social</td><td>Efficient reach, weaker buying intent</td><td>Medium</td></tr>
+            <tr><td>Email</td><td>Small volume, strong repeat signal</td><td>High</td></tr>
+            <tr><td>Creators</td><td>Trust-building signal worth testing</td><td>Low</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="section" id="opportunities">
+      <h2>Opportunity Map</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Proof-led landing pages</h3>
+          <p>Repeat comparison tables, validation snippets, and setup guidance where purchase anxiety is highest.</p>
+        </article>
+        <article class="card">
+          <h3>Search efficiency</h3>
+          <p>Keep high-intent search but audit expensive terms and route them to stronger proof pages.</p>
+        </article>
+        <article class="card">
+          <h3>Creator reuse</h3>
+          <p>Turn qualitative trust signals into reusable page modules, ads, and email content.</p>
+        </article>
+        <article class="card">
+          <h3>Email expansion</h3>
+          <p>Use email as a confidence and repeat-purchase channel, not just a discount channel.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="risks">
+      <h2>Risk and Rebuttal</h2>
+      <div class="two">
+        <article class="card">
+          <p class="pill risk">Do not overclaim</p>
+          <ul>
+            <li>Four weeks of data is directional, not definitive.</li>
+            <li>Creator content has low statistical confidence despite strong qualitative feedback.</li>
+            <li>Channel performance may be affected by offer timing, audience overlap, or landing page differences.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="pill">Validation needed</p>
+          <ul>
+            <li>Run an A/B test for proof-led page modules.</li>
+            <li>Separate new customers from returning customers.</li>
+            <li>Compare channel performance by landing page type.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="actions">
+      <h2>Action Roadmap</h2>
+      <div class="grid">
+        <article class="card"><h3>Week 1</h3><p>Audit search terms and identify proof gaps on top landing pages.</p></article>
+        <article class="card"><h3>Week 2</h3><p>Launch proof-led page test with comparison, validation, and setup guidance.</p></article>
+        <article class="card"><h3>Week 3</h3><p>Repurpose creator trust signals into ads and email content.</p></article>
+        <article class="card"><h3>Week 4</h3><p>Review conversion quality by channel and decide budget shifts.</p></article>
+      </div>
+      <p class="muted" style="margin-top:16px">Data note: fictional sample based on four weeks of directional campaign notes.</p>
+    </section>
+  </main>
+
+  <script>
+    const buttons = [...document.querySelectorAll("[data-tab]")];
+    const sections = [...document.querySelectorAll(".section")];
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = button.dataset.tab;
+        buttons.forEach((item) => item.classList.toggle("active", item === button));
+        sections.forEach((section) => section.classList.toggle("active", section.id === target));
+      });
+    });
+  </script>
+</body>
+</html>
