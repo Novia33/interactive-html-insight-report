@@ -1,0 +1,82 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="soft-shadow" x="130" y="96" width="1180" height="708" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="28"/>
+      <feGaussianBlur stdDeviation="32"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.10 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="card-shadow" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="#F5F5F7"/>
+
+  <g opacity="0.95">
+    <rect y="0" width="1440" height="76" fill="#FFFFFF"/>
+    <rect y="75" width="1440" height="1" fill="#E5E5EA"/>
+    <text x="190" y="45" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" font-weight="700">Interactive Insight</text>
+    <rect x="382" y="18" width="104" height="42" rx="10" fill="#FFD60A"/>
+    <text x="407" y="45" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16" font-weight="700">Summary</text>
+    <rect x="500" y="18" width="112" height="42" rx="10" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <text x="529" y="45" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16">Metrics</text>
+    <rect x="626" y="18" width="138" height="42" rx="10" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <text x="656" y="45" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16">Opportunity</text>
+    <rect x="778" y="18" width="96" height="42" rx="10" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <text x="811" y="45" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="16">Risk</text>
+  </g>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="160" y="116" width="1120" height="632" rx="32" fill="#FFFFFF"/>
+    <rect x="160" y="116" width="1120" height="632" rx="32" stroke="#ECECEF"/>
+  </g>
+
+  <rect x="208" y="164" width="146" height="34" rx="17" fill="#FFF2B8"/>
+  <text x="228" y="186" fill="#8A6400" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="14" font-weight="700">Sample output</text>
+
+  <text x="208" y="267" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="64" font-weight="800">Turn analysis into</text>
+  <text x="208" y="343" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="64" font-weight="800">interactive insight</text>
+  <text x="208" y="395" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20">A single-file HTML report with evidence, interpretation, risk, and action.</text>
+
+  <g filter="url(#card-shadow)">
+    <rect x="208" y="456" width="230" height="160" rx="16" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <rect x="208" y="456" width="230" height="6" rx="3" fill="#FFD60A"/>
+    <text x="232" y="508" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700">Infer structure</text>
+    <text x="232" y="553" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="34" font-weight="800">5-8</text>
+    <text x="232" y="585" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15">decision sections</text>
+  </g>
+
+  <g filter="url(#card-shadow)">
+    <rect x="462" y="456" width="230" height="160" rx="16" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <rect x="462" y="456" width="230" height="6" rx="3" fill="#FFD60A"/>
+    <text x="486" y="508" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700">Visualize</text>
+    <text x="486" y="553" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="34" font-weight="800">HTML</text>
+    <text x="486" y="585" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15">no dashboard stack</text>
+  </g>
+
+  <g filter="url(#card-shadow)">
+    <rect x="716" y="456" width="230" height="160" rx="16" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <rect x="716" y="456" width="230" height="6" rx="3" fill="#FFD60A"/>
+    <text x="740" y="508" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700">Challenge</text>
+    <text x="740" y="553" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="34" font-weight="800">Risk</text>
+    <text x="740" y="585" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15">adversarial review</text>
+  </g>
+
+  <g filter="url(#card-shadow)">
+    <rect x="970" y="456" width="230" height="160" rx="16" fill="#FFFFFF" stroke="#E5E5EA"/>
+    <rect x="970" y="456" width="230" height="6" rx="3" fill="#FFD60A"/>
+    <text x="994" y="508" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="17" font-weight="700">Act</text>
+    <text x="994" y="553" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="34" font-weight="800">Next</text>
+    <text x="994" y="585" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15">clear execution plan</text>
+  </g>
+
+  <rect x="208" y="648" width="682" height="42" rx="21" fill="#FFF7CC"/>
+  <rect x="226" y="665" width="376" height="8" rx="4" fill="#FFD60A"/>
+  <rect x="622" y="665" width="188" height="8" rx="4" fill="#E5E5EA"/>
+  <text x="916" y="675" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="15">Evidence-aware. Shareable. Lightweight.</text>
+</svg>
