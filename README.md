@@ -2,7 +2,15 @@
 
 A Codex skill for turning messy analysis, datasets, research notes, or business reviews into polished single-file interactive HTML reports.
 
+![Interactive HTML Insight Report preview](assets/preview.png)
+
 This is not a chart template. It is a reporting workflow that helps an AI agent infer useful dimensions, separate evidence from interpretation, add adversarial review, and produce a lightweight report that people can actually read.
+
+## What Makes It Different
+
+Most reporting tools start from a chart type. This skill starts from the decision the reader needs to make.
+
+It guides Codex to infer useful report sections, expose uncertainty, connect metrics to interpretation, and turn the result into a single HTML file that can be opened, shared, or published without a dashboard stack.
 
 ## What It Creates
 
